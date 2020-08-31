@@ -1,0 +1,105 @@
+   <!-- BOOTSTRAP CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+   <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+     VETERINARIA 
+    </a>
+  </nav>
+<br><br>
+<div class="card card-block responsive nowrap">
+<div class="cabecera"><h4 align="center">Cliente</h4></div>
+<div class="contenido">
+    <div class="form-group">
+      <label for="ID">Id</label>
+      <input type="text"  [(ngModel)]="id" class="form-control" id="id"  placeholder="Id">
+    </div>
+    <div class="form-group">
+      <label for="NOMBRE">Nombre</label>
+      <input type="text" [(ngModel)]="nombre" class="form-control" id="name" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+        <label for="DUI">DUI</label>
+        <input type="text"   [(ngModel)]="dui" class="form-control" id="dui" placeholder="DUI">
+      </div>
+      <div class="form-group">
+        <label for="NOMBREMASC">Nombre de Mascota</label>
+        <input type="text" [(ngModel)]="nombremasco" class="form-control" id="mascota" placeholder="Nombre de Mascota">
+      </div>
+      <div class="form-group">
+        <label for="TRATAMIENTO">Tratamiento</label>
+        <input type="text"  [(ngModel)]="tratamiento" class="form-control" id="tratamiento" placeholder="Tratamiento">
+      </div>
+      <div class="form-group">
+        <label for="MEDICAMENTO">Medicamento</label>
+        <input type="text" [(ngModel)]="medicamento"  class="form-control" id="medicamento" placeholder="Medicamento">
+      </div>
+      <div class="form-group">
+        <label for="COSTO">Costo</label>
+        <input type="text" class="form-control" [(ngModel)]="costo" id="costo" placeholder="Costo">
+      </div>
+      <div class="form-group">
+        <label for="COSTO">Visita</label>
+        <input type="text" class="form-control" [(ngModel)]="visita" id="costo" placeholder="Visita">
+      </div>
+      <!-- <a href="#fact"><input type="button" (click)="ingresar()" value="Agregar" class="btn btn-primary" data-toggle="modal"></a> -->
+     <button   (click)="ingresar()"  class="btn btn-primary" >Ingresar</button>&nbsp;&nbsp;
+     <button    data-target="#fact"  class="btn btn-primary" data-toggle="modal">Ticket</button>
+</div>
+</div>
+    <br/><br/>
+    <!-- <div class="modal" id="fact" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Factura</h5>
+            </div>
+            <div class="modal-body">  -->
+                 <table class="table table-bordered" [hidden]="contador == 0">
+                    <thead>
+                    <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Dui</th>
+                    <th>Nombre de Mascota</th>
+                    <th>Tratamiento</th>
+                    <th>Medicamento</th>
+                    <th>Costo</th>
+                    <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tcliente of registro">
+                        <td>{{tcliente.id}}</td>
+                        <td>{{tcliente.nombre}}</td>
+                        <td>{{tcliente.dui}}</td>
+                        <td>{{tcliente.nombremasco}}</td>
+                        <td>{{tcliente.tratamiento}}</td>
+                        <td>{{tcliente.medicamento}}</td>
+                        <td>{{tcliente.costo}}</td>
+                        <td>{{tcliente.total}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <!-- </div>
+                </div>
+                </div> -->
+
+        <div class="modal" id="fact" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Factura</h5>
+            </div>
+            <div class="modal-body"> 
+                <div class="form-group">
+                    <label for="ID">Id</label>
+                    <input type="text"  [(ngModel)]="id" class="form-control" id="id"  placeholder="Id">
+                  </div> 
+            </div>
+        </div>
+        </div> 
