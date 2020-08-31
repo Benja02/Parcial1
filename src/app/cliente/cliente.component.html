@@ -15,10 +15,6 @@
 <div class="cabecera"><h4 align="center">Cliente</h4></div>
 <div class="contenido">
     <div class="form-group">
-      <label for="ID">Id</label>
-      <input type="text"  [(ngModel)]="id" class="form-control" id="id"  placeholder="Id">
-    </div>
-    <div class="form-group">
       <label for="NOMBRE">Nombre</label>
       <input type="text" [(ngModel)]="nombre" class="form-control" id="name" placeholder="Nombre">
     </div>
@@ -46,50 +42,49 @@
         <label for="COSTO">Visita</label>
         <input type="text" class="form-control" [(ngModel)]="visita" id="costo" placeholder="Visita">
       </div>
-      <!-- <a href="#fact"><input type="button" (click)="ingresar()" value="Agregar" class="btn btn-primary" data-toggle="modal"></a> -->
-     <button   (click)="ingresar()"  class="btn btn-primary" >Ingresar</button>&nbsp;&nbsp;
-     <button    data-target="#fact"  class="btn btn-primary" data-toggle="modal">Ticket</button>
+      <button data-target="#fact"  data-toggle="modal" (click)="ingresar()"  class="btn btn-primary" >Ingresar</button>&nbsp;&nbsp; 
+     <!-- <button   (click)="ingresar()" data-target="#fact"  class="btn btn-primary" data-toggle="modal">Ticket</button> -->
 </div>
 </div>
     <br/><br/>
-    <!-- <div class="modal" id="fact" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+    <div class="modal" id="fact" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Factura</h5>
+              <h5 class="modal-title">Datos</h5>
             </div>
-            <div class="modal-body">  -->
-                 <table class="table table-bordered" [hidden]="contador == 0">
+            <div class="modal-body">  
+                  <table class="table table-bordered" [hidden]="contador == 0">
                     <thead>
                     <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Dui</th>
                     <th>Nombre de Mascota</th>
                     <th>Tratamiento</th>
                     <th>Medicamento</th>
                     <th>Costo</th>
+                    <th>Descuento</th>
                     <th>Total</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let tcliente of registro">
-                        <td>{{tcliente.id}}</td>
                         <td>{{tcliente.nombre}}</td>
                         <td>{{tcliente.dui}}</td>
                         <td>{{tcliente.nombremasco}}</td>
                         <td>{{tcliente.tratamiento}}</td>
                         <td>{{tcliente.medicamento}}</td>
                         <td>{{tcliente.costo}}</td>
+                        <td>{{tcliente.descuento}}</td>
                         <td>{{tcliente.total}}</td>
                         </tr>
                         </tbody>
-                    </table>
-                <!-- </div>
+                    </table> 
                 </div>
-                </div> -->
+                </div>
+                </div>
 
-        <div class="modal" id="fact" tabindex="-1" role="dialog">
+        <!-- <div class="modal" id="fact" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -99,7 +94,47 @@
                 <div class="form-group">
                     <label for="ID">Id</label>
                     <input type="text"  [(ngModel)]="id" class="form-control" id="id"  placeholder="Id">
+                    <br>
+                    <button    data-target="#ticket"  class="btn btn-primary" data-toggle="modal">Ticket</button>
                   </div> 
+                  <br><br>
+
+                  
+                  <table class="table table-bordered" [hidden]="contador == 0">
+                    <thead>
+                    <tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tcliente of registro">
+                        <td>Nombre</td>
+                        <td>{{tcliente.nombre}}</td>
+                        </tr>
+                        <tr *ngFor="let tcliente of registro">
+                            <td>Mascota</td>
+                            <td>{{tcliente.nombremasco}}</td>
+                        </tr>
+                        <tr *ngFor="let tcliente of registro">
+                            <td>Tratamiento</td>
+                            <td>{{tcliente.tratamiento}}</td>
+                        </tr>
+                        <tr *ngFor="let tcliente of registro">
+                            <td>Medicamento</td>
+                            <td>{{tcliente.medicamento}}</td>
+                        </tr>
+                        <tr *ngFor="let tcliente of registro">
+                            <td>Costo</td>
+                            <td>{{tcliente.costo}}</td>
+                        </tr>
+                        <tr *ngFor="let tcliente of registro">
+                            <td>Total</td>
+                            <td>{{tcliente.total}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
             </div>
         </div>
-        </div> 
+        </div> -->
+        
+        
+       

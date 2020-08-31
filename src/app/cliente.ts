@@ -9,7 +9,8 @@ export class Cliente {
         public medicamento: string,
         public costo: number,
         public visita: number,
-        public total:number
+        public total:number,
+        public descuento:number
         ) {}
         
 }
